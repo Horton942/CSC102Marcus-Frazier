@@ -1,0 +1,68 @@
+/* This is a comment in CSS. This is the only styles option for a comment.
+This is a multi- line comment.
+
+The format of a CSS style is:
+
+selector{
+    property: value;
+    property2: value;
+}
+
+All of the HTML page content is in the body section, so when we use the body selector, we are changing things doe the 
+whole page
+
+we are changing the background color and the text color.
+*/
+body{
+    background-color: rgba(159, 245, 159, 0.904);
+    color: black;
+}
+
+/* Heading 1, we are going to change the font used for this page title */
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: crimson;
+}
+
+/* style the links */
+nav{
+    height: 60px;
+    width: 200px;
+    float: left;
+    padding: 5px;
+    line-height: 30px;
+}
+
+/* Place the footer at the bottom of the page */
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    text-align: center;
+}
+
+/* this is a custom selector - it will only affect an item on the HTML page that has an ID of memeimage;These settings eill help with future assignments */
+#memeimage{
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 200px;
+}
+
+/* change the header to be in the center of the page. */
+header{
+    text-align: center;
+}
+
+/* Anchor tag styles - ake the hyperlinks look better */
+a{
+    text-decoration: none;
+    color: rgb(23, 7, 248);
+}
+
+p{
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    text-align: left;
+}
