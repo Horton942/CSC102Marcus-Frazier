@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W6 Assignment Strings</title>
+    <!-- Link to the css file -->
+    <link href="main.css" rel="stylesheet">
+    <!-- Include the code.js file -->
+    <script src="code.js"></script>
+</head>
+<body>
+    <!-- set up a form that takes user's first and last names and a zip code and then displays a secret message if they enter their information correctly -->
+    <h1>Welcome to my login page!</h1>
+    <h2>Please enter your information to see a secret message.</h2>
+
+    <!-- Create a form to gather the user input -->
+    <form method="post" onsubmit="return validateForm();">
+        <!-- Get the user's first name -->
+        <label for="fname">First Name: </label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <!-- Get the user's ;ast name -->
+        <label for="lname">Last Name: </label>
+        <input type="text" id="lname" name="lname"><br><br>
+        <!-- Get the user's zip code -->
+        <label for="zip">Zip Code: </label>
+        <input type="text" id="zip" name="zip"><br><br>
+        <!-- Here is the submit button so the form can be processed -->
+        <input type="submit" value="Submit"> 
+    </form>
+</body>
+</html>

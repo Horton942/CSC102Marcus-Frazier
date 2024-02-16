@@ -30,7 +30,7 @@ function playCraps(){
      if (sum == 7 || sum == 11){
         document.getElementById("crapsResult").innerHTML = "You lose";
      }
-     // now let's check if we win by rollinf 2 even numbers that match
+     // now let's check if we win by rolling 2 even numbers that match
      // first we check id the dice are the same numbers
      // then we check the modulus (remainder) is 0 when the is roll is divided by 2
      // or in other words, was the die roll an even number
@@ -51,4 +51,50 @@ function rollDie(){
     var die = Math.random() * 6;
     // we will get a rounded whole number that will be returned to whatever code calls this function
     return Math.ceil(die)
+}
+
+ // this function will validate the form input to make sure it meers our criteria
+ function validateForm(){
+   // get the first name that the user entered on the form
+   var firstName = document.getElementById("fname").value;
+
+   // get the last name that the user entered on the form
+   var lastName = document.getElementById("lname").value;
+
+   // get the zip code that the user entered on the form
+   var zipCode = document.getElementById("zip").value;
+
+   console.log("First Name: " + firstName);
+   console.log("Last Name: " + lastName);
+   console.log("Zip Code: " + zipCode);
+
+   // create a variable to hold firstName + space + lastName
+   var fullName = firstName + " " + lastName;
+   console.log("Full Name: " + fullName);
+
+   // do the input validation
+   // we will check for more than 20 letters in the first and lastnames
+   // or id no names were entered, the length will be 1 because of the space we add between first and last name
+   if (fullName.length > 20 || fullName.length == 1){
+       console.log("Invalid name");
+       // let the user know that they did not enter the information correctly
+       alert("Please enter a name that is shorter than 20 letters.");
+       // make sure the form does not submit
+       return false; 
+   }
+   else if (zipCode.length != 5){
+       console.log("Invalid zip code");
+       // let the user know that the zip code was not entered correctly
+       alert("Zip code was not 5 digits. Please try again.")
+       // make sure the form does not submit
+       return false; 
+   }
+   else{
+       // they passed validation! Release the secret word
+       console.log("we are good to go.");
+       alert("Welcome, " + fullName + ". The secret word is inovation.")
+       return true;
+   }
+
+   
 }
