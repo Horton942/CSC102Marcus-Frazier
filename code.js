@@ -252,3 +252,149 @@ function pauseSound(){
     audio.pause();
     console.log("sound paused");
 }
+
+// Week 12 Array code for plants and video games
+
+ // this function will run when the user clicks on the button to show the plants
+ function showPlants(){
+    // this array will hold all of our plant names - an array is 1 variable that holds multiple values
+    var plantsArr = [ "Spider plant", "Orchid", "Pothos", "Succulent", "Lavender", "Money Tree", "Jasmine", "Hibiscus", "Fern", "Cactus", "Lucky Bamboo", "Daisy", "Geranium" ];
+
+    // set up a pointer variable to our plants div
+    var plantDiv = document.getElementById("plantContainer");
+
+    // set up a pointer variable to the button that shows the plant
+    var plantButton = document.getElementById("btnPlants");
+
+    // create an unordered list (by default it will have bullet points)
+    var plantUl = document.createElement("ul");
+
+    // add the unordered list to the html page on the div
+    plantDiv.appendChild(plantUl);
+
+    // loop through the plant list array and create a list item for each plant
+    // i is the  counter variable; the loop should run as loing as i is less than the number of items in the array; increasethe value of i by 1 each time the loop runs
+    for( var i=0; i<plantsArr.length; i++){
+        // create a list item
+        var plantLi = document.createElement("li");
+
+        //add the name of the plant to the text of the list item
+        plantLi.textContent = plantsArr[i];
+
+        // add the list item to the unordered list
+        plantUl.appendChild(plantLi);
+    }
+
+    // hide the show plants button
+    plantButton.remove();
+}
+
+// this function will run when the user clicks on the button to show the stats
+function showStats(){
+    var gameNameArr = [
+        "Fortnite",
+        "minecraft",
+        "Roblox",
+        "Call of Duty",
+        "Helldivers 2"
+    ];
+
+    var playTimeArr = [
+        "50 hours",
+        "60 hours",
+        "900 hours",
+        "20 hours",
+        "500 hours"
+    ];
+
+    // set up a pointer variable to our stats div
+    var statsDiv = document.getElementById("statsContainer");
+
+    // set up a pointer variable to the button that shows the stats
+    var statsButton = document.getElementById("btnStats");
+
+    // create an unordered list (by default it will have bullet points)
+    var statsUl = document.createElement("ul");
+
+    // add the unordered list to the html page on the div
+    statsDiv.appendChild(statsUl);
+
+    // loop through the stats and add them to a list item
+    for (var i=0; i<gameNameArr.length; i++){
+        // create a list item
+        var statsLi = document.createElement("li");
+
+        //add the name of the stat to the text of the list item
+        statsLi.textContent = gameNameArr[i] + ": " + playTimeArr[i];
+
+        // add the list item to the unordered list
+        statsUl.appendChild(statsLi);
+    }
+
+    // hide the show Stats button
+    statsButton.remove();
+}
+
+// Week 12 Lap Time Recorder
+// this variable will keep track of the current lap
+        // as we add laps, rhe value will be increased by 1
+        var lapCounter = 0;
+
+        //set up an empty array that will hold the lap times
+        var lapsArray = [];
+
+        // this function will record a lap - add a lap to the lapsArray each time the button is clicked
+        function recordLap(){
+            // use .push to add an item to the end of the array
+            // new Date() will add the current date and time to the array
+            lapsArray.push(new Date());
+
+            // print out the info to the console
+            console.log("lap " + (lapCounter+1) + " recorded " + lapsArray[lapCounter]);
+
+            // display a message to the user that the lap was recorded
+            // create the shortcut/nickname variable that points to the message div
+            var divMsg = document.getElementById("messageDiv");
+
+            // display a message based on which lap is being recorded
+            if (lapCounter == 0){
+                divMsg.innerText = "The first lap was recorded";
+            }
+            else if (lapCounter == 1){
+                divMsg.innerText = "The second lap was recorded";
+            }
+            else if (lapCounter == 2){
+                divMsg.innerText = "The third lap was recorded";
+            }
+            //catch all else statement - if the counter is greater than 2, print out a generic message
+            else{
+                divMsg.innerText = "Lap " + (lapCounter+1) + " was recorded.";
+            }
+
+            // increase the lap counter by 1 - it is equivalent to saying lapCounter = lapCounter + 1
+            lapCounter++;
+        }
+
+        // create the function to display the lap times to the user
+        function displayLaps(){
+            // create a variable that is a pointer to the display laps div
+            var divLaps = document.getElementById("lapsDiv");
+
+            // create an unordered list to hold the lap times
+            var ulLaps = document.createElement("ul");
+
+            // add the unordered list to the display laps div
+            divLaps.appendChild(ulLaps);
+
+            // loop throught the laps array to add the lap times to the unordered list
+            for (var i = 0; i < lapsArray.length; i++){
+                // create a list item that will be added to the unordered list
+                var liLap = document.createElement("li");
+
+                // add the lap time to the list item text
+                liLap.textContent = "Lap " + (i+1) + ": " + lapsArray[i];
+
+                // add the listitem to the unordered list 
+                ulLaps.appendChild(liLap);
+            }
+        }
