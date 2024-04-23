@@ -26,9 +26,9 @@ h1{
 
 /* style the links */
 nav{
-    height: 60px;
+    /*height: 60px;
     width: 200px;
-    float: left;
+    float: left;*/
     padding: 5px;
     line-height: 30px;
 }
@@ -44,15 +44,14 @@ footer{
 /* this is a custom selector - it will only affect an item on the HTML page that has an ID of memeimage;These settings eill help with future assignments */
 #memeimage{
     position: absolute;
-    left: 25%;
-    top: 25%;
+    left: 0%;
+    top: 100px;
     width: 200px;
+    
 }
 
 /* change the header to be in the center of the page. */
-header{
-    text-align: center;
-}
+
 
 /* Anchor tag styles - make the hyperlinks look better */
 a{
@@ -62,8 +61,8 @@ a{
 
 p{
     position: fixed;
-    top: 5%;
-    left: 0%;
+    top: 10%;
+    left: 0px;
     text-align: left;
 }
 
@@ -71,6 +70,10 @@ p{
 table{
     width: 100%;
     border-collapse: collapse; /* This prevents stacked border lines */
+    position: fixed;
+    top: 155px;
+    left: 0%;
+    text-align: left;
 }
 
 th, td{
@@ -94,3 +97,37 @@ tr:hover{
     color: white; 
 }
 
+/* Nav Links */
+ /* set the nav and ul to some default settings */
+ nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li{
+    margin-bottom: 10px;
+    text-align: center;
+    display: inline;
+}
+
+nav ul li a{
+    text-decoration: none;
+    background-color: blue;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* this goves a smooth transition when the background-color changes */
+    display: inline;
+}
+
+/* change the hover color of our buttons */
+nav ul li a:hover{
+    background-color:rgb(204, 85, 105);
+}
+
+/* when the link is active */
+nav ul li a.active{
+    background-color:blue;
+}
